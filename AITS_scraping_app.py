@@ -102,7 +102,7 @@ def scrape_appa(scrap_function, pages, title, key, download_filename=None):
         # Lancer le scraping
         df2 = scrape_appartements(start_page=1, end_page=pages)
         st.success("Scraping terminé !")
-        st.write('Data dimension: ' + str(d2.shape[0]) + ' rows and ' + str(df2.shape[1]) + ' columns.')
+        st.write('Data dimension: ' + str(df2.shape[0]) + ' rows and ' + str(df2.shape[1]) + ' columns.')
         st.dataframe(df2, use_container_width=True)
         if download_filename:
             st.download_button(
