@@ -138,12 +138,12 @@ with st.sidebar:
 # Affichage principal sur toute la largeur (hors sidebar)
 if option == "Display & download dataset" :
     
-    st.markdown("<h1 style='text-align: center; color: black;'>MY DATA SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
             <p>
-                This app performs webscraping of data from dakar-auto over multiples pages. And we can also download scraped data from the app directly without scraping them.
+                AITS SCRAPER APP est un outil de Web scraping of data from dakar-auto over multiples pages. And we can also download scraped data from the app directly without scraping them.
             </p>
         </div>
         """,
@@ -168,7 +168,7 @@ if option == "Display & download dataset" :
         load_(df3, 'Appartements data', '3', download_filename="Appartements_data.csv")
 
 if option == "Data scraping" :
-    st.markdown("<h1 style='text-align: center; color: black;'>MY DATA SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
@@ -194,7 +194,7 @@ if option == "Data scraping" :
         scrape_appa(scrap_function=scrape_appartements,pages=pages,title="Lancer le scraping des appartements",key="scraping_appartements_btn",download_filename="resultats_appartements.csv")
 
 if option == "Dashbaord & visualization" :
-    st.markdown("<h1 style='text-align: center; color: black;'>MY DATA SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
