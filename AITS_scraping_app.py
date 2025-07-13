@@ -62,7 +62,7 @@ def scrape_vil(scrap_function, pages, title, key, download_filename=None):
 
     if st.button(title, key):
         # Lancer le scraping
-        df = scrape_villas(start_page=1, end_page=pages, delay=2)
+        df = scrape_villas(start_page=1, end_page=pages)
         st.success("Scraping terminé !")
         st.write('Data dimension: ' + str(df.shape[0]) + ' rows and ' + str(df.shape[1]) + ' columns.')
         st.dataframe(df, use_container_width=True)
@@ -81,7 +81,7 @@ def scrape_ter(scrap_function, pages, title, key, download_filename=None):
 
     if st.button(title, key):
         # Lancer le scraping
-        df1 = scrape_terrains(start_page=1, end_page=pages, delay=2)
+        df1 = scrape_terrains(start_page=1, end_page=pages)
         st.success("Scraping terminé !")
         st.write('Data dimension: ' + str(df1.shape[0]) + ' rows and ' + str(df1.shape[1]) + ' columns.')
         st.dataframe(df1, use_container_width=True)
@@ -100,7 +100,7 @@ def scrape_appa(scrap_function, pages, title, key, download_filename=None):
 
     if st.button(title, key):
         # Lancer le scraping
-        df2 = scrape_appartements(start_page=1, end_page=pages, delay=2)
+        df2 = scrape_appartements(start_page=1, end_page=pages)
         st.success("Scraping terminé !")
         st.write('Data dimension: ' + str(d2.shape[0]) + ' rows and ' + str(df2.shape[1]) + ' columns.')
         st.dataframe(df2, use_container_width=True)
