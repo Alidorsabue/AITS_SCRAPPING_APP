@@ -8,6 +8,4 @@ streamlit
 seaborn
 pybase64
 selenium
-re
-time
 webdriver-manager
