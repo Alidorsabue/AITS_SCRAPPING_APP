@@ -170,8 +170,10 @@ st.markdown('''<style> .stButton>button {
 
 with st.sidebar:
     st.markdown(
-        """
-        <style> [data-testid="collapsedControl"] {
+       """
+    <style>
+    /* Toujours afficher le bouton pour ouvrir la sidebar */
+    [data-testid="collapsedControl"] {
         display: block !important;
         position: fixed;
         top: 1rem;
