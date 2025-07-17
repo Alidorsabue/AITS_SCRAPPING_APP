@@ -1,14 +1,63 @@
 import streamlit as st
 import pandas as pd
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+import requests
+from bs4 import BeautifulSoup
 from scrapping_nonnettoyage import scrape_villas
 from scrapping_nonnettoyage import scrape_terrains
 from scrapping_nonnettoyage import scrape_appartements
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+st.markdown("""
+    <style>
+    header {visibility: hidden;}
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
+# Style du bandeau (fond, ombre, etc.)
+st.markdown("""
+    <style>
+    .bandeau-aits {
+        background: linear-gradient(90deg, #8e6fd6 0%, #6ec6ca 100%);
+        box-shadow: 0 2px 2px rgba(0,0,0,0.07);
+        border-radius: 0 0 18px 18px;
+        min-height: 90px;
+        margin-bottom: 30px;
+        margin-top: -3.5vw;
+        margin-left: 0vw;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        left: 0;
+        position: relative;
+    }
+    .bandeau-aits-title {
+        font-size: 2.2em;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing:2px;
+        margin: 0 50px 0 50px;
+        line-height: 1.1;
+        display: flex;
+        align-items: center;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Affichage du bandeau avec logo et titre sur la même ligne
+with st.container():
+    st.markdown(
+        """
+        <div class='bandeau-aits' style='display: flex; align-items: center;'>
+            <span class='bandeau-aits-title'>AITS SCRAPPING APP</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.markdown(
     """
@@ -138,12 +187,12 @@ with st.sidebar:
 # Affichage principal sur toute la largeur (hors sidebar)
 if option == "Display & download dataset" :
     
-    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS DATA SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
             <p>
-                AITS SCRAPER APP est un outil de Web scraping of data from dakar-auto over multiples pages. And we can also download scraped data from the app directly without scraping them.
+                Cette application vous aide à scrapper les données sur le site Coin Afrique sur la vente et/ou location des villas, les appartements et même les terrains au Sénegal. Vous pouvez aussi télécharger les données scrapper sous format CSV que vous pourrez utiliser prochainement.
             </p>
         </div>
         """,
@@ -168,12 +217,12 @@ if option == "Display & download dataset" :
         load_(df3, 'Appartements data', '3', download_filename="Appartements_data.csv")
 
 if option == "Data scraping" :
-    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS DATA SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
             <p>
-                This app performs webscraping of data from dakar-auto over multiples pages. And we can also download scraped data from the app directly without scraping them.
+                Cette application vous aide à visualiser les données du le site Coin Afrique sur la vente et/ou location des villas, les appartements et même les terrains au Sénegal. Vous pouvez aussi télécharger ces données sous format CSV que vous pourrez utiliser prochainement.
             </p>
         </div>
         """,
@@ -194,12 +243,12 @@ if option == "Data scraping" :
         scrape_appa(scrap_function=scrape_appartements,pages=pages,title="Lancer le scraping des appartements",key="scraping_appartements_btn",download_filename="resultats_appartements.csv")
 
 if option == "Dashbaord & visualization" :
-    st.markdown("<h1 style='text-align: center; color: black;'>AITS SCRAPER APP</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: black;'>AITS DATA SCRAPER APP</h1>", unsafe_allow_html=True)
     st.markdown(
         """
         <div style='text-align: center; color: white;'>
             <p>
-                This app performs webscraping of data from dakar-auto over multiples pages. And we can also download scraped data from the app directly without scraping them.
+                Vous trouverez sur cette pages un Dashbord présentant les tendances et évolution de quelques données sur les vente/location des villas, appartement et terrains pour vous permettre de prendre les décisions importantes.
             </p>
         </div>
         """,
