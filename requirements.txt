@@ -2,6 +2,7 @@ bs4
 requests
 scipy
 pandas
+matplotlib
 streamlit
 seaborn
 pybase64
