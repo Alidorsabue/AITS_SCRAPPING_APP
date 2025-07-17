@@ -182,7 +182,7 @@ with st.sidebar:
     st.markdown("## User Input Features")
     option = st.selectbox("Options", ["Data scraping", "Display & download dataset", "Dashbaord & visualization", "Fill app Evaluation form"])
     if option == "Data scraping" :
-        pages = st.selectbox("Pages indexes", list(range(1, 10001)), index=0)
+        pages = st.slider("Pages indexes", min_value=1, max_value=10000, value=1)
 
 # Affichage principal sur toute la largeur (hors sidebar)
 if option == "Display & download dataset" :
