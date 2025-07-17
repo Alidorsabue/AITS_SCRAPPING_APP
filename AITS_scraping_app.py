@@ -16,29 +16,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-    <style>
-    /* Assurer que le bouton pour ouvrir la sidebar est toujours visible */
-    [data-testid="collapsedControl"] {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed;
-        top: 1rem;
-        left: 0.5rem;
-        z-index: 1000;
-    }
-
-    /* Corriger les comportements sur petit écran */
-    @media (max-width: 768px) {
-        [data-testid="collapsedControl"] {
-            top: 0.5rem;
-            left: 0.5rem;
-        }
-    }
-    </style>
-""", unsafe_allow_html=True)
-
 # Style du bandeau (fond, ombre, etc.)
 st.markdown("""
     <style>
@@ -211,18 +188,6 @@ with st.sidebar:
     option = st.selectbox("Options", ["Data scraping", "Display & download dataset", "Dashbaord & visualization", "Fill app Evaluation form"])
     if option == "Data scraping" :
         pages = st.selectbox("Pages indexes", list(range(1, 10001)), index=0)
-
-st.markdown("""
-    <style>
-    [data-testid="collapsedControl"] {
-        display: block !important;
-        position: fixed;
-        top: 1rem;
-        left: 0.5rem;
-        z-index: 9999;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 # Affichage principal sur toute la largeur (hors sidebar)
 if option == "Display & download dataset" :
