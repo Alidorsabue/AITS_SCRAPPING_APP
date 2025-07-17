@@ -171,11 +171,14 @@ st.markdown('''<style> .stButton>button {
 with st.sidebar:
     st.markdown(
         """
-        <style>
-        [data-testid="stSidebar"] {
-            background-color: #a3c6f1;
-        }
-        </style>
+        <style> [data-testid="collapsedControl"] {
+        display: block !important;
+        position: fixed;
+        top: 1rem;
+        left: 0.5rem;
+        z-index: 9999;
+    }
+    </style>
         """,
         unsafe_allow_html=True
     )
