@@ -189,6 +189,18 @@ with st.sidebar:
     if option == "Data scraping" :
         pages = st.selectbox("Pages indexes", list(range(1, 10001)), index=0)
 
+st.markdown("""
+    <style>
+    [data-testid="collapsedControl"] {
+        display: block !important;
+        position: fixed;
+        top: 1rem;
+        left: 0.5rem;
+        z-index: 9999;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Affichage principal sur toute la largeur (hors sidebar)
 if option == "Display & download dataset" :
     
